@@ -39,14 +39,30 @@ public class ExpressionTree{
   /*return the value of the specified expression tree*/
   public double evaluate(){
     /*you are to write this method*/
-    return 0.0;
+    if (isValue()){
+      return getValue();
+    } else {
+      return apply(getOp(), getLeft().evaluate(), getRight().evaluate());
     }
+  }
 
   /*use the correct operator on both a and b, and return that value*/
   private double apply(char op, double a, double b){
     /*you are to write this method*/
-    return 0.0;
+    double result = 0;
+    if (op == '+'){
+      result = a + b;
+    } else if (op == '-') {
+      result = a - b;
+    } else if (op == '*') {
+      result = a * b;
+    } else if (op == '/') {
+      result = a / b;
     }
+    return result;
+  }
+
+
 
 
 
